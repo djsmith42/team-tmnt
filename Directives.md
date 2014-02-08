@@ -185,3 +185,5 @@ link: function postLink(scope, element, attrs) {
 - Place a debugger on the line that’s throwing the error.
 - Click the button, and when the debugger stops on the bad line, open up your console and experiment with ways to resolve the error.
 - This is a tricky error, so don’t get discouraged. Think about what the line of code is trying to accomplish. Think about what’s going wrong. Try to find a way around it. Google ways to find elements in Angular. Google how to show and hide things in Angular.
+- It might help to add jQuery to your application. You'll notice that you don't have access to all of jQuery's functionality... you're limited to Angular's [jQuery-lite functions](http://docs.angularjs.org/api/angular.element). Use ```bower install --save jquery``` and ```grunt bower-install``` to add jquery.js to your index.html file automagically. Angular will now wrap element in the full jQuery wrapper instead of the pared down jQuery-lite wrapper. This gives you nice functions like .hover and .children.
+- Once you've debugged the errors in this directive, try showing and hiding the popup based on [jQuery's .hover function](http://api.jquery.com/hover/).
