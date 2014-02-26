@@ -1,5 +1,5 @@
 <ul>
-    <li ng-repeat="team in teams">
+    <li class="open-popup" ng-repeat="team in teams">
         <a ui-sref="team({teamId: team.id})">{{ team.name }}</a>
     </li>
 </ul>
@@ -8,6 +8,6 @@
 
 <hr>
 
-<div dv-popup="open-popup">
-    Hello world! I am a popup that you chose to open!!!
+<div dv-popup="button">
+    {{ teams }}
 </div>

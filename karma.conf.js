@@ -13,10 +13,13 @@ module.exports = function(config) {
     files: [
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-ui-router/release/angular-ui-router.js',
+      'app/bower_components/jquery/jquery.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+      'app/views/**/*.html'
     ],
 
     // list of files / patterns to exclude
@@ -47,6 +50,15 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false
+    singleRun: false,
+
+    //Add preprocessors,
+    preprocessors: {
+      'app/views/**/*.html': 'html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'app/' // strip app from the file path
+    }
   });
 };
