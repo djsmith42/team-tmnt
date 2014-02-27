@@ -1,5 +1,3 @@
-'use strict';
-
 angular.module('tmntApp', [
   'ui.router'
 ]).config(function ($stateProvider, $urlRouterProvider) {

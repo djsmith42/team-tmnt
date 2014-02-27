@@ -16,6 +16,7 @@ module.exports = function(config) {
       'app/bower_components/angular-ui-router/release/angular-ui-router.js',
       'app/bower_components/jquery/jquery.js',
       'app/scripts/*.js',
+      'app/views/directives/*.html',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js',
@@ -32,10 +33,8 @@ module.exports = function(config) {
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
-
+    autoWatch: true,
 
     // Start these browsers, currently available:
     // - Chrome
@@ -54,8 +53,18 @@ module.exports = function(config) {
 
     //Add preprocessors,
     preprocessors: {
-      'app/views/**/*.html': 'html2js'
+      'app/views/**/*.html' : 'html2js',
+      'app/scripts/*.js'    : 'coverage',
+      'app/scripts/**/*.js' : 'coverage',
     },
+
+    reporters: ['coverage', 'progress'],
+
+    //coverageReporter: {
+    //  type: 'html',
+    //  dir: 'coverage',
+    //  file: 'javascript.xml',
+    //},
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'app/' // strip app from the file path
